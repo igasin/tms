@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 54px;
+}
+
+.separator {
+  border: 1px solid #EC7979;
+  width: 170px;
+  margin: 0px auto 40px auto;
+}
+
+p {
+  color: #86878B;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px auto 110px auto;
+}
+
+h3 {
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 39px auto 41px auto;
+}
+
+.aside p {
+  color: #000000;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 90px;
+}
+
+.aside-card__icon {
+  width: 92px;
+  height: 92px;
+  text-align: center;
+  border: 1px solid #EC7979;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.aside-card {
+  display: inline-block;
+  width: 370px;
+}
+
+.aside {
+  text-align: center;
+}
