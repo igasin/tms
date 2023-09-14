@@ -90,9 +90,12 @@
 
 
 .tabs-content-download a {
-    display: block;
-    text-align: center;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    /* display: block; */
+    /* text-align: center; */
+    /* height: 100%; */
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 600;
