@@ -220,9 +220,8 @@
 }
 
 .pricing-table__item:nth-child(1) {
-    width: 370px;
-    padding-top: 14px;
-    padding-bottom: 13px;
+    padding-top: 13px;
+    padding-bottom: 12px;
     border: 1px solid #F5F5F5;
     background: #333;
     color: #FFF;
@@ -233,9 +232,8 @@
 }
 
 .pricing-table__item:nth-child(2) {
-    width: 370px;
-    padding-top: 29px;
-    padding-bottom: 29px;
+    padding-top: 28px;
+    padding-bottom: 28px;
     border: 1px solid #F5F5F5;
     background: #333;
     color: #FFF;
@@ -245,9 +243,8 @@
 }
 
 .pricing-table__item:nth-child(3) {
-    width: 370px;
-    padding-top: 15px;
-    padding-bottom: 14px;
+    padding-top: 14px;
+    padding-bottom: 13px;
     border: 1px solid #F5F5F5;
     background: #333;
     color: rgba(255, 255, 255, 0.50);
@@ -257,8 +254,8 @@
 }
 
 .pricing-table__item {
-    padding-top: 15px;
-    padding-bottom: 14px;
+    padding-top: 14px;
+    padding-bottom: 13px;
     width: 370px;
     border: 1px solid #F5F5F5;
     background: #FFF;
