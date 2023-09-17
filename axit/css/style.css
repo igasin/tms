@@ -65,7 +65,7 @@
 .features {
     background: rgba(0, 0, 0, 0.50);
     background-blend-mode: overlay;
-    background-image: url(/tms/axit/img/background-image.png);
+    background-image: url(img/background-image.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
