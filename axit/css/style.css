@@ -65,7 +65,7 @@
 .features {
     background: rgba(0, 0, 0, 0.50);
     background-blend-mode: overlay;
-    background-image: url(img/background-image.png);
+    background-image: url(../img/background-image.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -146,7 +146,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
-    border: 1px solid #000;
+    
 }
 
 .features-content-card-name h4 {
@@ -158,12 +158,31 @@
     text-transform: uppercase;
     padding-top: 29px;
 }
+.features-content-card-name .colortext {
+    color: #EC7979;
+}
+
+.features-content-card-name > span {
+    color: #BDBDBD;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.features-content-card-name input {
+    width: 370px;
+    height: 1px;
+    background: #BDBDBD;
+    border: none;
+    
+} 
 
 .header-content-card-name-getstarted {
     font-family: Open Sans;
     font-size: 15px;
     font-weight: 600;
     background-color: #EC7979;
+    border-radius: 0 0 10px 10px;
     width: 100%;
 }
 .header-content-card-name-getstarted a {
@@ -271,6 +290,10 @@
 
 .tabs-content__image {
     background: url(<path-to-image>), lightgray -29.234px 0px / 189.036% 100% no-repeat;
+}
+
+.tabs-content__image img {
+    display: block;
 }
 
 .tabs-content-title h3 {
@@ -475,3 +498,82 @@
 .pricing-table-optima {
     margin: 59px 30px 0 30px;
 }
+
+/* customers */
+
+.customers h2 {
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 104px;
+    margin-bottom: 54px;
+}
+
+.separator {
+    border: 1px solid #EC7979;
+    width: 170px;
+    margin: 0px auto 40px auto;
+}
+
+.customers p {
+    color: #86878B;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px auto 83px auto;
+}
+
+.customers-block-card p {
+    width: 370px;
+    border-radius: 10px;
+    background: #E2E2E2;
+    color: #86878B;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 38px 15px;
+}
+
+.polygon {
+    margin-left: 35px;
+    margin-top: -80px;
+}
+
+.customers-block-card h4 {
+    color: #000;
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.customers-block-card h5 {
+    color: #000;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding-left: 30px;
+    padding-top: 25px;
+}
+
+.customers-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.customers-block-card-avatar {
+    display: flex;
+    /* justify-content: space-between; */
+    /* gap: 30px; */
+    padding-top: 46px;
+}
+
