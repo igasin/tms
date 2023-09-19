@@ -13,3 +13,6 @@
     margin: 0 auto;
 }
 
+.link-item:active {
+    color: aqua;
+}
