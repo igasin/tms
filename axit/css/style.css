@@ -66,7 +66,7 @@ input::placeholder {
     background-blend-mode: overlay;
     background-image: url(../img/background-image.png);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
 }
 
@@ -111,7 +111,6 @@ input::placeholder {
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
-    
 }
 
 .header-content-card-axit-download {
@@ -612,4 +611,66 @@ input::placeholder {
     width: 70px;
     height: 70px;
     border-radius: 50%;
+}
+
+
+/*  design  */
+
+.design {
+    height: 442px;
+    background: rgba(0, 0, 0, 0.50);
+    background-blend-mode: overlay;
+    background-image: url(../img/stylish-design.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 64px;
+}
+
+.stylish-design h2 {
+    position: relative;
+    color: #FFF;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 104px 0 54px 0;
+}
+
+.stylish-design__separator::before {
+    position: absolute;
+    content: "";
+    border: 1px solid #fff;
+    width: 170px;
+    bottom: 0;
+    left: calc(50% - 85px);
+}
+
+.stylish-design p {
+    color: #FFF;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 40px;
+}
+
+.stylish-design-download a {
+    color: #FFF;
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.stylish-design-download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 58px;
+    border: 2px solid #fff;
+    background-color: none;
+    margin: 73px auto 50px;
 }
