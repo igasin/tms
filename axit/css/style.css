@@ -501,6 +501,7 @@
 /* customers */
 
 .customers h2 {
+    position: relative;
     color: #000;
     text-align: center;
     font-family: Raleway;
@@ -508,14 +509,17 @@
     font-weight: 400;
     text-transform: uppercase;
     margin-top: 104px;
-    margin-bottom: 54px;
+    padding-bottom:  54px;
 }
-
-.separator {
+.customers__separator::before {
+    position: absolute;
+    content: "";
     border: 1px solid #EC7979;
     width: 170px;
-    margin: 0px auto 40px auto;
+    bottom: 0;
+    left: calc(50% - 85px);
 }
+
 
 .customers p {
     color: #86878B;
@@ -523,11 +527,10 @@
     font-family: Raleway;
     font-size: 18px;
     font-weight: 400;
-    margin: 0px auto 83px auto;
+    margin: 40px auto 83px auto;
 }
 
 .customers-block-card p {
-    width: 370px;
     border-radius: 10px;
     background: #E2E2E2;
     color: #86878B;
@@ -555,23 +558,22 @@
     font-size: 18px;
     font-weight: 400;
     text-transform: capitalize;
-    padding-left: 30px;
-    padding-top: 25px;
+    padding: 25px 0 0 30px;
 }
 
 .customers-block {
-    width: calc((100% - 60px) / 3);
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    /* gap: 30px; */
+}
+.customers-block-card {
+    width: calc((100% - 60px) / 3);
 }
 
 .customers-block-card-avatar {
     display: flex;
-    /* justify-content: space-between; */
-    /* gap: 30px; */
-    /* padding-top: 46px; */
 }
+
 .customers-block-card__item_avatar img {
     width: 70px;
     height: 70px;
