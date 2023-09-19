@@ -19,21 +19,19 @@
 }
 
 .header {
-    /* background: rgba(0, 0, 0, 0.50); */
-    /* background-blend-mode: overlay; */
-    /* background-image: url(/tms/axit/img/background-image.png); */
+    position: fixed;
+    width: 100%;
     background-color: #000;
-    /* background-repeat: no-repeat; */
-    /* background-position: center center; */
-    /* background-attachment: fixed; */
-    /* -webkit-background-size: cover; */
-    /* -moz-background-size: cover; */
-    /* -o-background-size: cover; */
-    /* background-size: cover; */
 }
 
+input::placeholder {
+    font-size: 14px;
+    font-family: Open sans;
+    color: #000;
+}
 
 .navigation {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -45,6 +43,8 @@
 }
 
 .navigation-list {
+    position: sticky;
+    content: "";
     display: flex;
     justify-content: space-between;
     gap: 50px;
@@ -170,7 +170,7 @@
 
 .features-content-card-name input {
     width: 370px;
-    height: 1px;
+    /* height: 1px; */
     background: #BDBDBD;
     border: none;
     
@@ -417,6 +417,10 @@
 
 /* pricing */
 
+.pricing {
+    scroll-margin-top: 75px;
+}
+
 .pricing-block h2 {
     position: relative;
     color: #000;
@@ -467,8 +471,6 @@
     position: relative;
     content: "";
     bottom: 20px;
-    transition: .1s;
-
 }
 
 .pricing-table__item:nth-child(1) {
