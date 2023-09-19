@@ -511,6 +511,7 @@
     margin-top: 104px;
     padding-bottom:  54px;
 }
+
 .customers__separator::before {
     position: absolute;
     content: "";
@@ -520,14 +521,26 @@
     left: calc(50% - 85px);
 }
 
-
 .customers p {
+    position: relative;
     color: #86878B;
     text-align: center;
     font-family: Raleway;
     font-size: 18px;
     font-weight: 400;
     margin: 40px auto 83px auto;
+}
+
+.customers_triangle::before {
+    position: absolute;
+    content: "";
+    width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 20px solid  #E2E2E2;
+    bottom: -20px;
+    left: 70px;
 }
 
 .customers-block-card p {
@@ -578,13 +591,4 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-}
-
-.polygon {
-	width: 0;
-	height: 0;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-top: 20px solid  #E2E2E2;
-    margin: -83px 0px 46px 70px;
 }
