@@ -84,6 +84,7 @@ input::placeholder {
     padding-bottom: 72px;
 }
 .features-content-card-axit h1 {
+    position: relative;
     color: #FFF;
     font-family: Raleway;
     font-size: 48px;
@@ -92,6 +93,16 @@ input::placeholder {
     width: 670px;
     padding-bottom: 55px;
 }
+
+.features__separator::before {
+    position: absolute;
+    content: "";
+    border: 1px solid #fff;
+    width: 170px;
+    bottom: 0;
+    left: 0;
+}
+
 .separator-card {
     border: 1px solid #FFF;
     width: 170px;
@@ -125,10 +136,26 @@ input::placeholder {
 }
 
 .features-content-card-name {
-    width: 470px;
-    height: 450px;
+    align-items: center;
     border-radius: 10px;
     background: #FFF;
+}
+.features-content-card-name p {
+    color: #BDBDBD;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+
+.features-content-card__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 8px; */
+    padding: 0 50px 33px;
 }
 
 
@@ -673,4 +700,82 @@ input::placeholder {
     border: 2px solid #fff;
     background-color: none;
     margin: 73px auto 50px;
+}
+
+/* contact  */
+
+.contact-us {
+
+}
+
+.contact-us h2 {
+    position: relative;
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 104px;
+    padding-bottom: 54px;
+}
+.contact-separator::before {
+    position: absolute;
+    content: "";
+    border: 1px solid #EC7979;
+    width: 170px;
+    bottom: 0;
+    left: calc(50% - 85px);
+}
+.contact-us p {
+    color: #86878B;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 40px;
+}
+
+.contact-us-card__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-us-card-send {
+    background-color: #EC7979;
+    width: 270px;
+    margin: 50px auto 50px;
+}
+
+.contact-us-card-send a {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+/* footer */
+
+.footer {
+    background-color: #000;
+}
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0 28px 0;
+
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 27px;
 }
