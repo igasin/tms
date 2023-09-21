@@ -75,7 +75,6 @@ input::placeholder {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    /* height: 1026px; */
 
 }
 
@@ -408,7 +407,7 @@ input::placeholder {
     text-align: center;
     font-size: 18px;
     font-weight: 400;
-    margin-bottom: 90px;
+    margin-bottom: 58px;
 }
 
 .aside-card__icon {
@@ -434,17 +433,13 @@ input::placeholder {
     width: calc((100% - 62px) / 3);
 }
 
-.aside-card:hover {
-    position: relative;
-    content: "";
-    filter: drop-shadow(0px 4px 10px rgba(51, 51, 51, 0.20));
-}
-
 
 /* pricing */
 
+
 .pricing {
     scroll-margin-top: 75px;
+    background: #F5F5F5;
 }
 
 .pricing-block h2 {
@@ -455,7 +450,7 @@ input::placeholder {
     font-size: 36px;
     font-weight: 400;
     text-transform: uppercase;
-    margin-top: 50px;
+    padding-top: 104px;
     padding-bottom: 54px;
 }
 .pricing__separator::before {
@@ -489,6 +484,7 @@ input::placeholder {
     list-style-type: none;
     text-align: center;
     margin-top: 79px;
+    margin-bottom: 50px;
     border: none;
 }
 
@@ -548,7 +544,8 @@ input::placeholder {
 
 /* customers */
 
-.customers h2 {
+
+.customers-title h2 {
     position: relative;
     color: #000;
     text-align: center;
@@ -569,8 +566,7 @@ input::placeholder {
     left: calc(50% - 85px);
 }
 
-.customers p {
-    position: relative;
+.customers-title p {
     color: #86878B;
     text-align: center;
     font-family: Raleway;
@@ -578,7 +574,25 @@ input::placeholder {
     font-weight: 400;
     margin: 40px auto 83px auto;
 }
-
+.customers-block {
+    display: flex;
+    justify-content: space-between;
+}
+.customers-block-card {
+    width: calc((100% - 60px) / 3);
+    
+}
+.customers-block-card p {
+    position: relative;
+    border-radius: 10px;
+    background: #E2E2E2;
+    color: #86878B;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 38px 23px 37px 24px;
+}
 .customers_triangle::before {
     position: absolute;
     content: "";
@@ -591,55 +605,36 @@ input::placeholder {
     left: 70px;
 }
 
-.customers-block-card p {
-    border-radius: 10px;
-    background: #E2E2E2;
-    color: #86878B;
-    text-align: center;
-    font-family: Raleway;
-    font-size: 18px;
-    font-weight: 400;
-    padding: 38px 15px;
+.customers-block-card__item-avatar-about {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 0 0 30px;
 }
-
-
-.customers-block-card h4 {
+.customers-name {
     color: #000;
     font-family: Open Sans;
     font-size: 24px;
     font-weight: 700;
     text-transform: capitalize;
-    padding-left: 30px;
-    padding-top: 10px;
 }
 
-.customers-block-card h5 {
+.customers-job {
     color: #000;
     font-family: Raleway;
     font-size: 18px;
     font-weight: 400;
     text-transform: capitalize;
-    padding: 15px 0 0 30px;
 }
-
-.customers-block {
-    display: flex;
-    justify-content: space-between;
-}
-.customers-block-card {
-    width: calc((100% - 60px) / 3);
-}
-
 .customers-block-card-avatar {
     display: flex;
+    padding: 66px 0 0 0;
 }
-
 .customers-block-card__item_avatar img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
 }
-
 
 /*  design  */
 
@@ -683,22 +678,20 @@ input::placeholder {
 }
 
 .stylish-design-download a {
+    display: flex;
+    justify-content: center;
     color: #FFF;
-    text-align: center;
     font-family: Open Sans;
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
+    padding: 15px 0;
 }
 
 .stylish-design-download {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 270px;
-    height: 58px;
+    width: 370px;
     border: 2px solid #fff;
-    background-color: none;
+    background-color: transparent;
     margin: 73px auto 50px;
 }
 
@@ -736,15 +729,17 @@ input::placeholder {
     margin-top: 40px;
 }
 
-.contact-us-card__input {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.contact-us-card-input {
+
+}
+
+.contact-us-card-input__item {
+
 }
 
 .contact-us-card-send {
     background-color: #EC7979;
-    width: 270px;
+    width: 370px;
     margin: 50px auto 50px;
 }
 
@@ -755,6 +750,7 @@ input::placeholder {
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 600;
+    text-transform: capitalize;
     padding: 20px 0;
 }
 
