@@ -116,17 +116,17 @@ input::placeholder {
     padding-bottom: 42px;
 }
 .header-content-card-axit-download a {
+    display: flex;
+    justify-content: center;
     color: #FFF;
     font-family: Open Sans;
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
+    padding: 15px 0;
 }
 
 .header-content-card-axit-download {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 270px;
     height: 58px;
     border: 2px solid #fff;
@@ -162,7 +162,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 30px;
+    /* gap: 30px; */
 }
 
 .features-content-card-name {
@@ -608,7 +608,7 @@ input::placeholder {
 .customers-block-card__item-avatar-about {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
     padding: 0 0 0 30px;
 }
 .customers-name {
