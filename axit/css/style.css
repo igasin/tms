@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500;700&display=swap');
 
 
-
-
-
   * {
     margin: 0;
     padding: 0;
@@ -758,13 +755,13 @@ input::placeholder {
 
 .footer {
     background-color: #000;
+    padding-bottom: 27px;
 }
 .footer-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 35px 0 28px 0;
-
+    justify-content: center;
+    column-gap: 32px;
+    padding: 35px 0 27px 0;
 }
 
 .footer p {
@@ -773,5 +770,67 @@ input::placeholder {
     font-family: Raleway;
     font-size: 18px;
     font-weight: 400;
-    padding-bottom: 27px;
+}
+
+.footer-links svg:nth-child(1) {
+    fill: #EC7979;
+    transition: .3s;
+}
+.footer-links svg:nth-child(1):hover {
+    fill: red;
+    stroke: chartreuse;
+    opacity: 50%;
+    transform: scale(120%);
+}
+
+.footer-links svg:nth-child(2) {
+    fill: rgb(0, 255, 42);
+    transition: .5s;
+}
+.footer-links svg:nth-child(2):hover {
+    fill: blue;
+    transform: scale(120%);
+    transform: rotate(20deg);
+}
+.footer-links svg:nth-child(3) {
+    fill: aqua;
+    transition: .3s;
+}
+.footer-links svg:nth-child(3):hover {
+    background: whitesmoke;
+    fill: rosybrown;
+    transform: scale(120%);
+}
+.footer-links svg:nth-child(4) {
+    fill: yellow;
+    transition: .3s;
+}
+.footer-links svg:nth-child(4):hover {
+    fill: mediumspringgreen;
+    transform: scale(120%);
+}
+.footer-links svg:nth-child(5) {
+    fill: rgba(255, 0, 234, 0.5);
+    transition: .3s;
+}
+.footer-links svg:nth-child(5):hover {
+    fill: rgba(0, 255, 221, 0.5);
+    stroke: #EC7979;
+    transform: scale(120%);
+}
+.footer-links svg:nth-child(6) {
+    fill: rgba(94, 255, 0, 0.5);
+    transition: .5s;
+}
+.footer-links svg:nth-child(6):hover {
+    fill: rgb(255, 123, 0);
+    transform: rotate(-180deg);
+}
+.footer-links svg:nth-child(7) {
+    fill: rgb(3, 142, 255);
+    transition: .3s;
+}
+.footer-links svg:nth-child(7):hover {
+    fill: rgb(0, 255, 128);
+    transform: scale(130%);
 }
