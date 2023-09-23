@@ -17,6 +17,7 @@
 
 .header {
     position: fixed;
+    z-index: 1;
     width: 100%;
     background-color: #000;
 }
@@ -38,7 +39,7 @@
     margin-left: -50px;
 }
 .navigation-list {
-    position: sticky;
+    position: relative;
     content: "";
     display: flex;
     list-style-type: none;
@@ -120,6 +121,13 @@
     font-weight: 400;
     padding: 42px 0;
 }
+
+.header-content-card-axit-download {
+    width: 40.298%;
+    border: 2px solid #fff;
+    background-color: none;
+}
+
 .header-content-card-axit-download a {
     display: flex;
     justify-content: center;
@@ -132,23 +140,16 @@
 }
 
 
-.header-content-card-axit-download {
-    width: 270px;
-    height: 58px;
-    border: 2px solid #fff;
-    background-color: none;
-    /* margin-bottom: 185px; */
-}
-
 .header-content-card-axit-download a:hover {
     color: #EC7979;
     font-family: Open Sans;
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
-    border: 2px solid #EC7979;
+    outline: 2px solid #EC7979;
     color: #EC7979;
 }
+
 .header-content-card-axit-download a:active {
     color: #FFF;
     text-align: center;
@@ -156,9 +157,10 @@
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
-    border: 2px solid #AB4949;
+    outline: 2px solid #AB4949;
     background: #AB4949;
 }
+
 
 .features-content-card-name {
     /* align-items: center; */
