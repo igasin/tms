@@ -84,15 +84,15 @@
 
 .features-content {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     gap: 30px;
+    padding: 283px 0 0 0;
 
 }
 
 .logo-card {
-    padding-top: 231px;
-    padding-bottom: 72px;
+    padding: 23px 0 72px 0;
 }
 .features-content-card-axit h1 {
     position: relative;
@@ -101,7 +101,6 @@
     font-size: 48px;
     font-weight: 500;
     text-transform: uppercase;
-    width: 670px;
     padding-bottom: 55px;
 }
 
@@ -114,18 +113,12 @@
     left: 0;
 }
 
-.separator-card {
-    border: 1px solid #FFF;
-    width: 170px;
-}
 .features-content-card-axit p {
     color: #FFF;
     font-family: Raleway;
     font-size: 18px;
     font-weight: 400;
-    width: 270px;
-    padding-top: 42px;
-    padding-bottom: 42px;
+    padding: 42px 0;
 }
 .header-content-card-axit-download a {
     display: flex;
@@ -144,7 +137,7 @@
     height: 58px;
     border: 2px solid #fff;
     background-color: none;
-    margin-bottom: 185px;
+    /* margin-bottom: 185px; */
 }
 
 .header-content-card-axit-download a:hover {
@@ -168,9 +161,10 @@
 }
 
 .features-content-card-name {
-    align-items: center;
+    /* align-items: center; */
     border-radius: 10px;
     background: #FFF;
+    margin: 0px 0 293px 0;
 }
 .features-content-card-name p {
     color: #BDBDBD;
@@ -194,7 +188,8 @@
 .features-content-card-axit {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    padding: 0 0 185px 0;
+    /* justify-content: space-between; */
     /* gap: 30px; */
 }
 
@@ -203,7 +198,6 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
-    
 }
 
 .features-content-card-name h4 {
@@ -831,66 +825,69 @@
     font-size: 18px;
     font-weight: 400;
 }
-
-.footer-links svg:nth-child(1) {
+/* .footer-links svg {
+    cursor: pointer;
+} */
+.footer-links a:nth-child(1) svg {
     fill: #EC7979;
     transition: .3s;
 }
-.footer-links svg:nth-child(1):hover {
+.footer-links a:nth-child(1):hover svg {
     fill: red;
     stroke: chartreuse;
     opacity: 50%;
     transform: scale(120%);
 }
 
-.footer-links svg:nth-child(2) {
+.footer-links a:nth-child(2) svg {
     fill: rgb(0, 255, 42);
     transition: .5s;
 }
-.footer-links svg:nth-child(2):hover {
+.footer-links a:nth-child(2):hover svg {
     fill: blue;
     transform: scale(120%);
     transform: rotate(20deg);
 }
-.footer-links svg:nth-child(3) {
+.footer-links a:nth-child(3) svg {
     fill: aqua;
     transition: .3s;
 }
-.footer-links svg:nth-child(3):hover {
+.footer-links a:nth-child(3):hover svg {
     background: whitesmoke;
     fill: rosybrown;
     transform: scale(120%);
 }
-.footer-links svg:nth-child(4) {
+.footer-links a:nth-child(4) svg {
     fill: yellow;
     transition: .3s;
 }
-.footer-links svg:nth-child(4):hover {
+.footer-links a:nth-child(4):hover svg {
     fill: mediumspringgreen;
     transform: scale(120%);
 }
-.footer-links svg:nth-child(5) {
+.footer-links a:nth-child(5) svg {
     fill: rgba(255, 0, 234, 0.5);
     transition: .3s;
 }
-.footer-links svg:nth-child(5):hover {
+.footer-links a:nth-child(5):hover svg {
     fill: rgba(0, 255, 221, 0.5);
     stroke: #EC7979;
     transform: scale(120%);
 }
-.footer-links svg:nth-child(6) {
+.footer-links a:nth-child(6) svg {
     fill: rgba(94, 255, 0, 0.5);
     transition: .5s;
 }
-.footer-links svg:nth-child(6):hover {
+.footer-links a:nth-child(6):hover svg {
     fill: rgb(255, 123, 0);
     transform: rotate(-180deg);
 }
-.footer-links svg:nth-child(7) {
+.footer-links a:nth-child(7) svg {
     fill: rgb(3, 142, 255);
     transition: .3s;
 }
-.footer-links svg:nth-child(7):hover {
+.footer-links a:nth-child(7):hover svg {
     fill: rgb(0, 255, 128);
     transform: scale(130%);
+    transform: skew(10deg, 10deg);
 }
