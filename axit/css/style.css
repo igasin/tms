@@ -261,7 +261,7 @@
 /*  social-media */
 
 .social-media {
-    padding: 16px 0 18px 0;
+    padding: 14px 0 18px 0;
     background-color: #F8EFEF;
 }
 .social-media-about {
@@ -282,7 +282,7 @@
     font-size: 24px;
     font-weight: 700;
     text-transform: capitalize;
-    padding-bottom: 31px;
+    padding: 2px 0 31px 0;
 }
 .social-media-title p {
     color: #86878B;
@@ -692,13 +692,13 @@
 /*  design  */
 
 .design {
-    height: 442px;
     background: rgba(0, 0, 0, 0.50);
     background-blend-mode: overlay;
     background-image: url(../img/stylish-design.png);
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 64px;
+    padding-bottom: 50px;
 }
 
 .stylish-design h2 {
@@ -745,7 +745,28 @@
     width: 370px;
     border: 2px solid #fff;
     background-color: transparent;
-    margin: 73px auto 50px;
+    margin: 73px auto 0;
+}
+
+.stylish-design-download a:hover {
+    color: #EC7979;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    outline: 2px solid #EC7979;
+    color: #EC7979;
+}
+
+.stylish-design-download a:active {
+    color: #FFF;
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    outline: 2px solid #AB4949;
+    background: #AB4949;
 }
 
 /* contact  */
