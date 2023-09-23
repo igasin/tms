@@ -217,9 +217,9 @@
     color: #EC7979;
 }
 
-.features-content-form {
+/* .features-content-form {
     padding: 0 0 50px 0;
-}
+} */
 
 .features-content-card-name > span {
     color: #BDBDBD;
@@ -236,6 +236,10 @@
     color: inherit;
     outline: none;
 } 
+
+.features-content-card__input:nth-child(3) {
+    margin-bottom: 75px;
+}
 
 .header-content-card-name-getstarted {
     position: absolute;
@@ -811,6 +815,47 @@
     font-size: 18px;
     font-weight: 400;
     margin-top: 40px;
+    margin-bottom: 89px;
+}
+
+.contact-form-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form-block form {
+    width: calc((100% - 30px) / 2);
+}
+
+.contact-form-block  p {
+    color: #BDBDBD;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.contact-form-block input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+} 
+
+
+.contact-form-block .contact-form-block__input:not(:last-child) {
+    padding-bottom: 50px;
+}
+.contact-form-block input[type="name"],
+.contact-form-block input[type="email"],
+.contact-form-block input[type="password"] 
+{
+    
+}
+.contact-form-block input[type="message"] {
+    
 }
 
 .contact-us-card-input {
@@ -819,6 +864,16 @@
 
 .contact-us-card-input__item {
 
+}
+
+.contact-us-card-send a:active {
+    color: #FFF;
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background: #AB4949;
 }
 
 .contact-us-card-send {
@@ -831,6 +886,7 @@
     display: flex;
     justify-content: center;
     justify-items: center;
+    font-family: Open Sans;
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 600;
