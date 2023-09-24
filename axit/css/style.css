@@ -163,6 +163,7 @@
 
 
 .features-content-card-name {
+    width: 80.251%;
     /* align-items: center; */
     border-radius: 10px;
     background: #FFF;
@@ -177,6 +178,14 @@
     padding: 0;
 }
 
+.features-content-card-name input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+} 
 
 .features-content-card__input:not(:last-child) {
     display: flex;
@@ -230,15 +239,6 @@
     font-size: 14px;
     font-weight: 400;
 }
-
-.features-content-card-name input {
-    width: 370px;
-    border: none;
-    border-bottom: 1px solid #BDBDBD;
-    background-color: transparent;
-    color: inherit;
-    outline: none;
-} 
 
 
 .header-content-card-name-getstarted {
