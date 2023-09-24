@@ -218,6 +218,10 @@
     /* gap: 30px; */
 }
 
+.features-content-form {
+    flex-grow: 1;
+}
+
 .features-content-card-name h4 {
     color: #333;
     text-align: center;
