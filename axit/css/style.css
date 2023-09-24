@@ -952,7 +952,8 @@
 }
 .footer-links a:nth-child(4):hover svg {
     fill: mediumspringgreen;
-    transform: scale(120%);
+    transform: rotateY(150deg);
+    backface-visibility: visible;
 }
 .footer-links a:nth-child(5) svg {
     fill: rgba(255, 0, 234, 0.5);
