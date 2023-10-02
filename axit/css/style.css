@@ -1277,7 +1277,15 @@
         display: none;
     }
     .features-content {
+        gap: 56px;
         padding: 140px 0 50px 0;
+    }
+    .features-title-about {
+        width: 100%;
+    }
+    .features-title-about p {
+        text-align: center;
+        margin: 0 auto;
     }
     .features-content-card-axit {
         width: 100%;
@@ -1459,4 +1467,11 @@
     .footer {
         padding-bottom: 45px;
     }
+
+
+
+    /*  */
+
+
+
 }
