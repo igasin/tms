@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>les-13</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Навбар</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Ссылка</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Выпадающий список
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Действие</a></li>
+                      <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Отключенная</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                  <button class="btn btn-outline-success" type="submit">Поиск</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+           <!--Одинаковая ширина колонок -->
+    <div class="row row-block">
+        <h3><span class="orange">1</span> Одинаковая ширина колонок</h3>
+    </div>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://img.freepik.com/free-vector/frontend-development-concept-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-2357.jpg?w=996&t=st=1697447092~exp=1697447692~hmac=aa9b3daa0b259c348d98481b71cf50556b710098b869109a261408df599b02d3" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Заголовок карточки</h5>
+                  <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                  <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                </div>
+              </div>
+            </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://img.freepik.com/free-vector/frontend-development-concept-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-2357.jpg?w=996&t=st=1697447092~exp=1697447692~hmac=aa9b3daa0b259c348d98481b71cf50556b710098b869109a261408df599b02d3" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Заголовок карточки</h5>
+                  <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                  <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://img.freepik.com/free-vector/frontend-development-concept-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-2357.jpg?w=996&t=st=1697447092~exp=1697447692~hmac=aa9b3daa0b259c348d98481b71cf50556b710098b869109a261408df599b02d3" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Заголовок карточки</h5>
+                  <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                  <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+    </div>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+    </div>
+
+    <div class="row row-block">
+        <h3><span class="orange">2</span>Установка ширины одной колонки</h3>
+    </div>
+    <div class="row">
+        <div class="col-2">1</div>
+        <div class="col-10">2</div>
+    </div>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col-6">2</div>
+        <div class="col-2">3</div>
+    </div>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col-8">2</div>
+        <div class="col">3</div>
+    </div>
+
+    <div class="row row-block">
+        <h3><span class="orange">3</span>Мульти ряд</h3>
+    </div>
+    <div class="row">
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="w-100"></div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="w-100"></div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+    </div>
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Элемент аккордеона #1
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Элемент аккордеона #2
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Элемент аккордеона #3
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
+      </div>
+
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-link">Link</button>
+
+
+       <!-- Адаптив -->
+
+    <div class="row row-block">
+        <h3><span class="orange">4</span>Адаптив</h3>
+    </div>
+    <div class="row">
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-sm-8 col-lg-10">col</div>
+        <div class="col-6 col-sm-4 col-lg-2">col</div>
+    </div>
+
+    <div class="block-card">
+        <div class="card" style="width: 18rem;">
+            <img src="https://img.freepik.com/free-vector/frontend-development-concept-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-2357.jpg?w=996&t=st=1697447092~exp=1697447692~hmac=aa9b3daa0b259c348d98481b71cf50556b710098b869109a261408df599b02d3" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Заголовок карточки</h5>
+              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+              <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="https://img.freepik.com/free-vector/frontend-development-concept-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-2357.jpg?w=996&t=st=1697447092~exp=1697447692~hmac=aa9b3daa0b259c348d98481b71cf50556b710098b869109a261408df599b02d3" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Заголовок карточки</h5>
+              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+              <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="https://img.freepik.com/free-vector/frontend-development-concept-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-2357.jpg?w=996&t=st=1697447092~exp=1697447692~hmac=aa9b3daa0b259c348d98481b71cf50556b710098b869109a261408df599b02d3" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Заголовок карточки</h5>
+              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+              <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+            </div>
+          </div>
+    </div>
+
+
+
+    
+     <!-- Сложная комбинированная сетка -->
+     <div class="row row-block">
+        <h3><span class="orange">5</span>Сложная комбинированная сетка</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-8">col md 8</div>
+        <div class="col-md-4 col-6">col-6 col-md-4</div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-md-4">col-6 col-md-4</div>
+        <div class="col-4 col-md-4">col-4 col-md-4</div>
+        <div class="col-5 col-md-4">col-5 col-md-4</div>
+    </div>
+
+
+
+
+    Вертикальное выравнивание
+    <div class="row row-block">
+        <h3><span class="orange">6</span>Вертикальное выравнивание</h3>
+    </div>
+    <div class="row align-items-center row-start row-item">
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+    </div>
+    <div class="row row-start row-item">
+        <div class="col align-self-start ">col</div>
+        <div class="col align-self-center">col</div>
+        <div class="col align-self-end">col</div>
+    </div>
+
+
+
+    Горизонтальное выравнивание
+    <div class="row row-block">
+        <h3><span class="orange">7</span>Горизонтальное выравнивание</h3>
+    </div>
+    <div class="row justify-content-around row-item align-items-center">
+        <div class="col-3">col</div>
+        <div class="col-3">col</div>
+        <div class="col-3 align-self-end">col</div>
+    </div>
+
+
+
+    Удаление полей между калонками
+    <div class="row row-block">
+        <h3><span class="orange">8</span>Удаление полей между калонками</h3>
+    </div>
+    <div class="row gx-0">
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+        <div class="col-6 col-sm-4">col</div>
+    </div>
+
+
+
+    Порядок эллемента
+    <div class="row row-block">
+        <h3><span class="orange">9</span>Порядок эллемента</h3>
+    </div>
+    <div class="row">
+        <div class="col-3 order-3">order-1</div>
+        <div class="col-3 order-1">order-2</div>
+        <div class="col-3 order-2">order-3</div>
+    </div>
+
+
+
+    Смешение колонок
+    <div class="row row-block">
+        <h3><span class="orange">10</span>Смешение колонок</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4 offset-md-2">col-md-4</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">order-1</div>
+    </div>
+
+
+
+
+     <!-- Вложеность -->
+     <div class="row row-block">
+        <h3><span class="orange">11</span>Вложеность</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">Level-1
+            <div class="row">
+                <div class="col-8 col-sm-6">Level-2</div>
+                <div class="col-8 col-sm-6">Level-2</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.beltelecom.by/sites/default/files/styles/flexslider_full/public/2023-03/banner_shop_btc.jpg?itok=VkX1m7hS" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.beltelecom.by/sites/default/files/styles/flexslider_full/public/2023-10/Beltelecom_VideoControl_1900x600.png?itok=vxnMyGAP" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.beltelecom.by/sites/default/files/styles/flexslider_full/public/2023-09/Kaspersky_flyer_front_0.png?itok=kw8L0y_-" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.beltelecom.by/sites/default/files/styles/flexslider_full/public/2023-04/%D0%91%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D0%9C%D0%BE%D0%B9%D0%B3%D0%BE%D1%80%D0%BE%D0%B4.jpg?itok=2t1Ue54K" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.beltelecom.by/sites/default/files/styles/flexslider_full/public/2022-12/Evika_Banner_1900x600.jpg?itok=IWp5FMoa" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
+      </div>
+
+
+
+
+
+
+
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/640f11331714241ac7b50055/Colorful-Harlequin-mantis-shrimp-with-its-red-egg-/960x0.jpg?format=jpg&width=1440" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/64105344d02e99bccc14a8f2/A-dog-participating-in-obstacle-jumping-competition-/960x0.jpg?format=jpg&width=1440" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/640f15e3acf60cda6d216405/Portrait-of-a-girl-with-her-camel-taking-a-break-/960x0.jpg?format=jpg&width=1440" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    </div>
+
+
+    <section class="footer">
+        <div class="footer-info">
+            <div class="footer-info__element footer-location">
+                <h5>Location</h5>
+                <p>3481 Melrose Place Beverly Hills, CA 90210</p>
+            </div>
+            <div class="footer-info__element footer-social">
+                <div class="footer-social__title">
+                    <h5>Share with Love</h5>
+                </div>
+                <div class="footer-social__link">
+                    <a href="#facebook" class="team-block-card__social_item">
+                        <img src="img/facebook_icon.svg" alt="facebook">
+                    </a>
+                    <a href="#twitter" class="team-block-card__social_item">
+                        <img src="img/twitter_icon.svg" alt="twitter">
+                    </a>
+                    <a href="#linkedin" class="team-block-card__social_item">
+                        <img src="img/linkedin_icon.svg" alt="linkedin">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-info__element footer-about">
+                <h5>About ActiveBox</h5>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+        </div>
+        <div class="footer-copyright copyright-block">
+            <div class="span-gray-block">
+                <span class="footer-span">
+                <span class="span-gray-color-text">Copyright © 2015 ActiveBox. 
+                    All Rights Reserved Made with</span> by Kamal Chaneman
+            </span>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
