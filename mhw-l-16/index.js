@@ -53,3 +53,30 @@ console.log((a = String(a)) + (b = String(b)) + ' ' + c);
 
 // task 5
 
+let d = Number(!!'доступ');
+let e = Number(!!'морпех');
+let f = Number(!!'наледь');
+let g = Number(!!'попрек');
+let j = Number(!!'рубило');
+
+let lengthWords = d + e + f + g + j;
+
+console.log(lengthWords);
+
+// task 6
+
+let i = 'Just do it!';
+let k = 777;
+let l = true;
+
+console.log(typeof i, typeof k, typeof l);
+
+
+// task 7
+
+function userData() {
+  let userName = prompt('Enter your name')
+  let userAge = prompt('Enter your age')
+
+  console.log(userName + ' ' + userAge + ' ' + 'years old')
+}
