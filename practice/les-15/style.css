@@ -18,3 +18,8 @@ h1{
   font-size: 64px;
   color: coral;
 }
+p{
+  font-size: 14px;
+  color: blueviolet;
+  padding: 100px;
+}
