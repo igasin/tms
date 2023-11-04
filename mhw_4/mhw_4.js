@@ -162,6 +162,101 @@ function showResultFirstTaskAdvanced() {
 
 // ------------------ Advanced level Task 2 -----------------
 
+function showResultSecondTaskAdvanced() {
 
+const showNumberOfSquares = function(n, m) {
+  if (n === 0 || m === 0 || n < 0 || m < 0) {
+    return 0;
+  } else {
+    return n * m -1;
+  }
+}
+
+console.log(`Chocolate 2 by 1, how many breaks? result: ${showNumberOfSquares(2, 1)}`)
+console.log(`Chocolate 3 by 1, how many breaks? result: ${showNumberOfSquares(3, 1)}`)
+console.log(`Chocolate 1 by 1, how many breaks? result: ${showNumberOfSquares(1, 1)}`)
+
+}
 
 // ------------------ Advanced level Task 3 -----------------
+
+function showResultThirdTaskAdvanced() {
+
+  // let bankDeposit  = 9000;
+
+// let phonePrice = 1500;
+// let casePrice = 60;
+
+
+// // function to calculate tax
+// function calculateTax(amount) {
+//   return amount * taxRate;
+// }
+
+// // function for formatting price
+// function formatPrice(amount) {
+//   return `$ ${amount.toFixed(2)}`;
+// }
+
+// let totalPrice = 0;
+
+// // purchase phones and accessories
+// while (totalPrice + phonePrice + calculateTax(totalPrice + phonePrice) + casePrice < bankDeposit) {
+//   totalPrice += phonePrice + casePrice;
+// }
+
+// // tax calculation
+// let tax = calculateTax(totalPrice);
+
+// // calculating the total price + tax
+// let finalPrice = totalPrice + tax;
+
+// // total purchase price
+// console.log(`Purchase amount: ${formatPrice(finalPrice)}`);
+
+// // Can I afford the purchase or not?
+// if (finalPrice < bankDeposit) {
+//   console.log("Yes I can buy");
+// } else {
+//   console.log("I can't do it");
+// }
+
+// let bankDeposit = prompt("Type your balance:");
+let bankDeposit = 5000;
+
+let phonePrice = 1000;
+let casePrice = 50;
+let taxRate = 0.05;
+
+// purchase phones and accessories
+let totalPrice = 0;
+while (totalPrice < bankDeposit - phonePrice + casePrice) {
+  totalPrice += phonePrice + casePrice;
+}
+// console.log(totalPrice);
+
+// function to calculate tax
+function calculateTax(totalPrice) {
+  return totalPrice * taxRate;
+}
+// console.log(calculateTax(totalPrice));
+
+// tax calculation
+totalPrice += calculateTax(totalPrice);
+
+// function for formatting price
+function formatPrice(totalPrice) {
+  return `$${totalPrice.toFixed(2)}`;
+}
+
+// purchase amount
+console.log(`Purchase amount: ${formatPrice(totalPrice)}`);
+
+// Checking your bank account balance
+if (totalPrice < bankDeposit) {
+  console.log("You can buy this");
+} else {
+  console.log("No money");
+}
+
+}
