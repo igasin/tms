@@ -1,0 +1,51 @@
+// ------------------------- Task 1 -------------------------
+// Выведи все элементы массива в консоль с помощью метода forEach.
+// Реализуйте решение двумя способами, используя 
+// function declaration & arrow function
+
+// array.forEach(callback(value, index, array), this)
+
+const fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987];
+
+// function declaration
+function printArrayElement (element) {
+  console.log(element);
+}
+
+fibonacci.forEach(printArrayElement);
+
+
+// arrow function
+fibonacci.forEach((value) => console.log(value)); 
+
+// ------------------------- Task 2 -------------------------
+// Используя метод map создайте новый массив, на основе массива 
+// users, в котором каждый элемент массива будет содержать 
+// строку вида: ['member 1: Darya', 'member 2: Masha', ... etc]
+// Реализуйте решение двумя способами, используя 
+// function declaration & arrow function.
+
+
+const users = ['Darya', 'Masha', 'Denis', 'Vitaliy', 'Polina', 'Anton']
+
+// function declaration
+function getNewArrayUsers (value, index) {
+  return `member ${index + 1}: ${value}`
+};
+
+const newArrayusers = users.map(getNewArrayUsers);
+
+console.log(newArrayusers);
+
+
+// arrow function
+const newUsers = users.map((value, index) => `member ${index + 1}: ${value}`);
+
+console.log(newUsers);
+
+// ------------------------- Task 3 -------------------------
+
+
+
+// ----------------- Advanced level Task 1 ------------------
+
