@@ -18,6 +18,8 @@ fibonacci.forEach(printArrayElement);
 // arrow function
 fibonacci.forEach((value) => console.log(value)); 
 
+
+
 // ------------------------- Task 2 -------------------------
 // Используя метод map создайте новый массив, на основе массива 
 // users, в котором каждый элемент массива будет содержать 
@@ -44,6 +46,28 @@ const newUsers = users.map((value, index) => `member ${index + 1}: ${value}`);
 console.log(newUsers);
 
 // ------------------------- Task 3 -------------------------
+// С помощью метода filter создайте новый массив в котором не 
+// будет отрицательных чисел. 
+// Реализуйте решение двумя способами, используя 
+// function declaration & arrow function.
+
+const numbers = [7, -4, 32, -90, 54, 32, -21]
+
+// // function declaration
+// function getPositiveNumbers (numbers) {
+//   return 
+// }
+
+
+// arrow function
+const positiveNubers = numbers.filter((value) => {
+  return value > 0;
+});
+
+console.log(positiveNubers);
+
+
+// ------------------------- Task 4 -------------------------
 
 
 
