@@ -81,3 +81,55 @@ password совпадает с полученным из prompt значение
 //   }, {});
 // }
 
+
+// ---------------------------------------------------------------
+
+
+
+// ['codewars', 'flick', 'code', 'wars', 'flick', 'flick', 'code', 'wars', 'flick']
+
+// function replaceToBooleans (array) {
+//   let currentBooleanValue = true;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === "flick") {
+//       currentBooleanValue = !currentBooleanValue;
+//         array[i] = currentBooleanValue;
+//     } else {
+//       array[i] = currentBooleanValue;
+//     }
+//   }
+//   return array;
+// }
+
+
+const replaceToBooleans = (array) => {
+  const getReplaceBoolFalsTru = array.map(value => value === "flick" ? value = !true : value = true)
+  return getReplaceBoolFalsTru
+};
+
+console.log(replaceToBooleans(['codewars', 'flick', 'code', 'wars', 'flick', 'flick', 'code']))
+
+
+// const replaceToBooleans = (array) => {
+//   const replaceBoolFalsTru = array.reduce((ac, value) => ac.concat(value === "flick" ? value = !true : value = true), []);
+//   return replaceBoolFalsTru;
+// };
+
+// console.log(replaceToBooleans(['codewars', 'flick', 'code', 'wars', 'flick', 'flick', 'code']))
+
+
+
+
+
+
+
+const transformStr = (str) => {
+  return str.toLowerCase().split('').map((letter, _, arr) => {
+  return arr.indexOf(letter) === arr.lastIndexOf(letter) ? '(' : ')'
+  }).join('');
+}
+
+console.log(transformStr("din")); // Output: (((
+console.log(transformStr("recede")); // Output: ()()()
+console.log(transformStr("Success")); // Output: )())())
+console.log(transformStr("(( @")); // Output: "))((
