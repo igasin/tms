@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Open Sans, Raleway, serif, sans-serif;
+  border: none;
+  font-size: 16px;
+}
+
+.wrapper {
+  /* max-width: 1200px; */
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.todolistblock {
+  min-height: 180px;
+  width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 20px;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: lightgray;
+  padding: 15px;
+  margin: 25px;
+}
+
+.todolistnav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 10px;
+}
+
+.todonavblock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  ustify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 10px;
+}
+
+
+.todocard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  width: 460px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.todocard_active {
+  background-color: gray;
+}
+
+.inputcard {
+  height: 45px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.conteinerdata {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 40px 10px;
+}
+
+.button {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #6CE4CF;
+  cursor: pointer;
+}
+
+.buttonnav {
+  height: 45px;
+  width: 100px;
+}
+
+.buttoncard {
+  height: 25px;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.buttonshow {
+  height: 45px;
+  width: 160px;
+}
+
+.inputnav {
+  height: 45px;
+  width: 360px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.search {
+  width: 160px;
+}
+
+.entries {
+  padding: 10px;
+}
+
+.date {
+  font-size: 12px;
+  height: 35px;
+  width: 90px;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.todoText {
+  height: 50px;
+  width: 300px;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 12px 0;
+}
+
+.todoText_line-through {
+  text-decoration: line-through;
+}
+
+.checkboxbutton {
+  height: 25px;
+  width: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.checkboxbutton_checked {
+  height: 25px;
+  width: 30px;
+  border: 2px solid black;
+  background-color: #6CE4CF;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-image: url("https://img.icons8.com/ios/50/checkmark--v1.png");
+}
