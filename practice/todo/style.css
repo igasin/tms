@@ -127,16 +127,17 @@
   border-radius: 5px;
 }
 
-.todoText {
+.todotext {
   height: 50px;
   width: 300px;
   background-color: white;
   text-align: center;
   border-radius: 5px;
   padding: 12px 0;
+  overflow: auto;
 }
 
-.todoText_line-through {
+.todotext_line-through {
   text-decoration: line-through;
 }
 
