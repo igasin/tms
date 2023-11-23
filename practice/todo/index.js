@@ -122,6 +122,23 @@ const showCompletedTodos = () => {
   });
 };
 
+const searchTodos = () => {
+  const todos = document.getElementsByClassName("todocard");
+  const searchValue = todoSearch.value.toLowerCase();
+
+  Array.from(todos).forEach(todo => {
+    const todoText = todo.querySelector(".todotext").textContent.toLowerCase();
+
+    if (todoText.startsWith(searchValue)) {
+      todo.style.display = "flex";
+    } else {
+      todo.style.display = "none";
+    }
+  });
+};
+
+todoSearch.addEventListener("input", searchTodos);
+
 updateEntryCounts();
 
 
