@@ -1,191 +1,452 @@
+let todos = getTodos();
+
+const filers = {
+  checked: "checked",
+  search: "search",
+};
+
+let searchValue = "";
+
+let activeStatuses = [];
+
 const root = document.querySelector("#root");
+const todoList = document.createElement("div");
+const todoNavBlock = document.createElement("div");
+const todoInput = createInput("Enter todo ...", "inputnav");
+const allEntries = createSpan("All: 0", "entries");
+const completedEntries = createSpan("Completed: 0", "entries");
+const todoSearch = createInput("Search...", "search");
+
 root.classList.add("todolistblock");
 
-const createButton = (text, className, onClick) => {
+todoList.classList.add("todolistnav");
+
+todoNavBlock.classList.add("todonavblock");
+
+const addButton = createButton("Add", "buttonnav", handleAddButtonClick);
+const deleteAllButton = createButton("Delete All", "buttonnav", deleteAll);
+const deleteLastButton = createButton(
+  "Delete last",
+  "buttonnav",
+  removeLastTodo
+);
+const showAllButton = createButton("Show All", "buttonshow", showAll);
+const showCompletedButton = createButton(
+  "Show Completed",
+  "buttonshow",
+  showChecked
+);
+
+root.append(todoNavBlock, todoList);
+todoNavBlock.append(
+  deleteAllButton,
+  deleteLastButton,
+  todoInput,
+  addButton,
+  allEntries,
+  completedEntries,
+  showAllButton,
+  showCompletedButton,
+  todoSearch
+);
+
+todoSearch.addEventListener("input", searchTodos);
+
+function getTodos() {
+  return JSON.parse(localStorage.getItem("todos")) || [];
+}
+
+function setTodos(todos) {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function changeCopmlitedCard(id) {
+  const todoIndex = todos.findIndex((todo) => todo.id === id);
+
+  if (todoIndex !== -1) {
+    todos[todoIndex].isChecked = !todos[todoIndex].isChecked;
+    renderChangedData();
+  }
+}
+function saveTodoCard({ text }) {
+  const todo = {
+    id: generateId(),
+    date: new Date().toLocaleString(),
+    text,
+    isChecked: false,
+  };
+
+  todos.push(todo);
+
+  renderChangedData();
+}
+function deleteAll() {
+  todos = [];
+  renderChangedData();
+}
+
+function generateId() {
+  return todos.reduce((acc, { id }) => Math.max(acc, id), 0) + 1;
+}
+
+// function generateId() {
+//   const todos = getTodos();
+//   let id = 0;
+
+//   for (let todo of todos) {
+//     if (todo.id > id) {
+//       id = todo.id;
+//     }
+//   }
+//   return id + 1;
+// }
+
+function removeLastTodo() {
+  todos.pop();
+  renderChangedData();
+}
+
+function removeTodoItem(id) {
+  todos = todos.filter((el) => el.id !== id);
+  renderChangedData();
+}
+
+function renderList(filteredData) {
+  todoList.innerHTML = "";
+  filteredData.forEach((el) => todoList.append(createTodoCard(el)));
+}
+
+function renderChangedData() {
+  const filteredData = getFilteredData();
+  console.log(filteredData);
+  console.log(activeStatuses);
+  updateEntryCounts(filteredData);
+  renderList(filteredData);
+  setTodos(todos);
+}
+
+function showAll() {
+  if (activeStatuses.includes(filers.checked)) {
+    activeStatuses = activeStatuses.filter((el) => el !== filers.checked);
+  }
+  renderChangedData();
+}
+function showSearch() {
+  if (!activeStatuses.includes(filers.search)) {
+    activeStatuses.push(filers.search);
+  }
+  renderChangedData();
+}
+
+function showChecked() {
+  if (!activeStatuses.includes(filers.checked)) {
+    activeStatuses.push(filers.checked);
+  }
+  renderChangedData();
+}
+
+function getFiltered(todos) {
+  return todos.filter((el) => {
+    return el.isChecked;
+  });
+}
+
+function getFieldsByText(todos, searchValue) {
+  return todos.filter((el) =>
+    el.text.toLowerCase().includes(searchValue.toLowerCase())
+  );
+}
+
+function getFilteredData() {
+  let data = todos;
+  if (activeStatuses.includes(filers.checked)) {
+    data = getFiltered(data);
+  }
+
+  if (activeStatuses.includes(filers.search)) {
+    data = getFieldsByText(data, searchValue);
+  }
+
+  return data;
+}
+
+renderChangedData();
+
+function createButton(text, className, onClick) {
   const button = document.createElement("button");
   button.textContent = text;
   button.classList.add("button", className);
-  button.addEventListener("click", onClick);
+  button.onclick = onClick;
   return button;
-};
+}
 
-const createInput = (placeholder, className) => {
+function createInput(placeholder, className) {
   const input = document.createElement("input");
   input.placeholder = placeholder;
   input.classList.add("inputnav", className);
   return input;
-};
+}
 
-const createSpan = (text, className) => {
+function createSpan(text, className) {
   const span = document.createElement("span");
   span.textContent = text;
   span.classList.add(className);
   return span;
-};
+}
 
-const createTodoCard = () => {
+function createTodoCard({ text, isChecked = false, id, date }) {
   const todoCard = document.createElement("div");
   todoCard.classList.add("todocard");
 
+  const todoTextSpan = createSpan(text, "todotext");
 
-    
-
-  
-  const todoText = createSpan(todoInput.value, "todotext");
-  
-  const checkboxButton = createButton("", "checkboxbutton", () => {
+  const checkboxButton = createButton("", "checkboxbutton", function () {
     checkboxButton.classList.toggle("checkboxbutton_checked");
     todoCard.classList.toggle("todocard_active");
-    todoText.classList.toggle("todotext_line-through");
-    updateEntryCounts()
+    todoTextSpan.classList.toggle("todotext_line-through");
+    console.log(id);
+
+    changeCopmlitedCard(id);
   });
 
-  const todoDate = createSpan(new Date().toLocaleString(), "date");
+  if (isChecked) {
+    checkboxButton.classList.add("checkboxbutton_checked");
+    todoCard.classList.add("todocard_active");
+    todoTextSpan.classList.add("todotext_line-through");
+  }
+
+  const todoDate = createSpan(date, "date");
 
   const todoCardButtonClose = createButton("X", "buttoncard", () => {
-    todoCard.remove();
-    updateEntryCounts();
+    console.log(id);
+    removeTodoItem(id);
   });
 
-  const conteinerDateBtn = document.createElement("div");
-  conteinerDateBtn.classList.add("conteinerdata");
+  const containerDateBtn = document.createElement("div");
+  containerDateBtn.classList.add("todocard_block-btn");
 
-  todoList.append(todoCard);
-  todoCard.append(checkboxButton, todoText, todoDate, todoCardButtonClose, conteinerDateBtn);
-  conteinerDateBtn.append(todoCardButtonClose, todoDate);
-};
+  todoCard.append(
+    checkboxButton,
+    todoTextSpan,
+    todoDate,
+    todoCardButtonClose,
+    containerDateBtn
+  );
+  containerDateBtn.append(todoCardButtonClose, todoDate);
 
-const todoInput = createInput("Enter todo ...", "inputnav");
+  return todoCard;
+}
 
-const addButton = createButton("Add", "buttonnav", () => {
-  if (todoInput.value) {
-    createTodoCard(todoInput.value);
+function calculateTotal(filteredData) {
+  return {
+    all: filteredData.length,
+    checked: filteredData.filter((el) => el.isChecked).length,
+  };
+}
+
+function updateEntryCounts(todos) {
+  const { all, checked } = calculateTotal(todos);
+
+  allEntries.textContent = `All: ${all}`;
+  completedEntries.textContent = `Completed: ${checked}`;
+}
+
+function searchTodos() {
+  searchValue = todoSearch.value.toLowerCase();
+
+  showSearch();
+}
+
+function validateInput(value) {
+  return !!value;
+}
+
+function handleAddButtonClick() {
+  const todoTextValue = todoInput.value.trim();
+
+  if (validateInput(todoTextValue)) {
     todoInput.value = "";
-    updateEntryCounts();
-
-
-    // Local Storage functions
-    function saveTodoCard(todoCard) {
-      const todos = getName();
-      const todo = {
-        id: generateId(),
-        date: new Date().toLocaleString(),
-        text: todoCard.querySelector(".todotext").textContent,
-        isChecked: todoCard.classList.contains("todocard_active"),
-      };
-      todos.push(todo);
-      setName(todos);
-
-      console.log(todos, todo);
-    }
-
-    function getName() {
-      const todos = JSON.parse(localStorage.getItem("todos")) || [];
-      return todos;
-    }
-
-    function setName(data) {
-      localStorage.setItem('todos', JSON.stringify(data));
-    }
-
-    function generateId() {
-      const todos = getNeme();
-      let maxId = 0;
-      todos.forEach(todo => {
-        if (todo.id > maxId) {
-          maxId = todo.id;
-        }
-      });
-      return maxId + 1;
-    }
-
-
-
-
-  } 
-});
-
-const deleteAllButton = createButton("Delete All", "buttonnav", () => {
-  todoList.innerHTML = "";
-  updateEntryCounts();
-});
-
-const deleteLastButton = createButton("Delete last", "buttonnav", () => {
-    todoList.lastChild.remove();
-    updateEntryCounts();
+    saveTodoCard({ text: todoTextValue });
   }
-);
+}
 
-const todoList = document.createElement("div");
-todoList.classList.add("todolistnav");
+// const root = document.querySelector("#root");
+// root.classList.add("todolistblock");
 
-const todoNavBlock = document.createElement("div");
-todoNavBlock.classList.add("todonavblock");
+// const createButton = (text, className, onClick) => {
+//   const button = document.createElement("button");
+//   button.textContent = text;
+//   button.classList.add("button", className);
+//   button.addEventListener("click", onClick);
+//   return button;
+// };
 
-const todoSearch = createInput("Search...", "search");
+// const createInput = (placeholder, className) => {
+//   const input = document.createElement("input");
+//   input.placeholder = placeholder;
+//   input.classList.add("inputnav", className);
+//   return input;
+// };
 
-const showAllButton = createButton("Show All", "buttonshow", () => {
-  showAllTodos();
-});
+// const createSpan = (text, className) => {
+//   const span = document.createElement("span");
+//   span.textContent = text;
+//   span.classList.add(className);
+//   return span;
+// };
 
-const showCompletedButton = createButton("Show Completed", "buttonshow", () => {
-  showCompletedTodos();
-});
+// const createTodoCard = () => {
+//   const todoCard = document.createElement("div");
+//   todoCard.classList.add("todocard");
 
-const allEntries = createSpan("All: 0", "entries");
+//   const todoText = createSpan(todoInput.value, "todotext");
 
-const completedEntries = createSpan("Completed: 0", "entries");
+//   const checkboxButton = createButton("", "checkboxbutton", () => {
+//     checkboxButton.classList.toggle("checkboxbutton_checked");
+//     todoCard.classList.toggle("todocard_active");
+//     todoText.classList.toggle("todotext_line-through");
+//     updateEntryCounts()
+//   });
 
-root.append(todoNavBlock, todoList);
-todoNavBlock.append(deleteAllButton, deleteLastButton, todoInput, addButton,
-  allEntries, completedEntries, showAllButton, showCompletedButton, todoSearch);
+//   const todoDate = createSpan(new Date().toLocaleString(), "date");
 
-const updateEntryCounts = () => {
-  const allTodos = document.getElementsByClassName("todocard");
-  const completedTodos = document.getElementsByClassName("todocard_active");
-  allEntries.textContent = `All: ${allTodos.length}`;
-  completedEntries.textContent = `Completed: ${completedTodos.length}`;
-};
+//   const todoCardButtonClose = createButton("X", "buttoncard", () => {
+//     todoCard.remove();
+//     updateEntryCounts();
+//   });
 
-const showAllTodos = () => {
-  const todos = document.getElementsByClassName("todocard");
-  Array.from(todos).forEach(todo => {
-    todo.style.display = "flex";
-  });
-};
+//   const conteinerDateBtn = document.createElement("div");
+//   conteinerDateBtn.classList.add("conteinerdata");
 
-const showCompletedTodos = () => {
-  const todos = document.getElementsByClassName("todocard");
-  Array.from(todos).forEach(todo => {
-    if (todo.classList.contains("todocard_active")) {
-      todo.style.display = "flex";
-    } else {
-      todo.style.display = "none";
-    }
-  });
-};
+//   todoList.append(todoCard);
+//   todoCard.append(checkboxButton, todoText, todoDate, todoCardButtonClose, conteinerDateBtn);
+//   conteinerDateBtn.append(todoCardButtonClose, todoDate);
+// };
 
-const searchTodos = () => {
-  const todos = document.getElementsByClassName("todocard");
-  const searchValue = todoSearch.value.toLowerCase();
+// const todoInput = createInput("Enter todo ...", "inputnav");
 
-  Array.from(todos).forEach(todo => {
-    const todoText = todo.querySelector(".todotext").textContent.toLowerCase();
+// const addButton = createButton("Add", "buttonnav", () => {
+//   if (todoInput.value) {
+//     createTodoCard(todoInput.value);
+//     todoInput.value = "";
+//     updateEntryCounts();
 
-    if (todoText.includes(searchValue)) {
-      todo.style.display = "flex";
-    } else {
-      todo.style.display = "none";
-    }
-  });
-};
+//     // Local Storage functions
+//     function saveTodoCard(todoCard) {
+//       const todos = getName();
+//       const todo = {
+//         id: generateId(),
+//         date: new Date().toLocaleString(),
+//         text: todoCard.querySelector(".todotext").textContent,
+//         isChecked: todoCard.classList.contains("todocard_active"),
+//       };
+//       todos.push(todo);
+//       setName(todos);
 
-todoSearch.addEventListener("input", searchTodos);
+//       console.log(todos, todo);
+//     }
 
-updateEntryCounts();
+//     function getName() {
+//       const todos = JSON.parse(localStorage.getItem("todos")) || [];
+//       return todos;
+//     }
 
+//     function setName(data) {
+//       localStorage.setItem('todos', JSON.stringify(data));
+//     }
 
+//     function generateId() {
+//       const todos = getNeme();
+//       let maxId = 0;
+//       todos.forEach(todo => {
+//         if (todo.id > maxId) {
+//           maxId = todo.id;
+//         }
+//       });
+//       return maxId + 1;
+//     }
 
+//   }
+// });
+
+// const deleteAllButton = createButton("Delete All", "buttonnav", () => {
+//   todoList.innerHTML = "";
+//   updateEntryCounts();
+// });
+
+// const deleteLastButton = createButton("Delete last", "buttonnav", () => {
+//     todoList.lastChild.remove();
+//     updateEntryCounts();
+//   }
+// );
+
+// const todoList = document.createElement("div");
+// todoList.classList.add("todolistnav");
+
+// const todoNavBlock = document.createElement("div");
+// todoNavBlock.classList.add("todonavblock");
+
+// const todoSearch = createInput("Search...", "search");
+
+// const showAllButton = createButton("Show All", "buttonshow", () => {
+//   showAllTodos();
+// });
+
+// const showCompletedButton = createButton("Show Completed", "buttonshow", () => {
+//   showCompletedTodos();
+// });
+
+// const allEntries = createSpan("All: 0", "entries");
+
+// const completedEntries = createSpan("Completed: 0", "entries");
+
+// root.append(todoNavBlock, todoList);
+// todoNavBlock.append(deleteAllButton, deleteLastButton, todoInput, addButton,
+//   allEntries, completedEntries, showAllButton, showCompletedButton, todoSearch);
+
+// const updateEntryCounts = () => {
+//   const allTodos = document.getElementsByClassName("todocard");
+//   const completedTodos = document.getElementsByClassName("todocard_active");
+//   allEntries.textContent = `All: ${allTodos.length}`;
+//   completedEntries.textContent = `Completed: ${completedTodos.length}`;
+// };
+
+// const showAllTodos = () => {
+//   const todos = document.getElementsByClassName("todocard");
+//   Array.from(todos).forEach(todo => {
+//     todo.style.display = "flex";
+//   });
+// };
+
+// const showCompletedTodos = () => {
+//   const todos = document.getElementsByClassName("todocard");
+//   Array.from(todos).forEach(todo => {
+//     if (todo.classList.contains("todocard_active")) {
+//       todo.style.display = "flex";
+//     } else {
+//       todo.style.display = "none";
+//     }
+//   });
+// };
+
+// const searchTodos = () => {
+//   const todos = document.getElementsByClassName("todocard");
+//   const searchValue = todoSearch.value.toLowerCase();
+
+//   Array.from(todos).forEach(todo => {
+//     const todoText = todo.querySelector(".todotext").textContent.toLowerCase();
+
+//     if (todoText.includes(searchValue)) {
+//       todo.style.display = "flex";
+//     } else {
+//       todo.style.display = "none";
+//     }
+//   });
+// };
+
+// todoSearch.addEventListener("input", searchTodos);
+
+// updateEntryCounts();
 
 // // Local Storage functions
 // function saveTodoCard(todoCard) {
@@ -219,11 +480,6 @@ updateEntryCounts();
 //   });
 //   return maxId + 1;
 // }
-
-
-
-
-
 
 // const root = document.querySelector("#root");
 // root.classList.add("todolistblock");
@@ -367,22 +623,6 @@ updateEntryCounts();
 // todoSearch.addEventListener("input", searchTodos);
 
 // updateEntryCounts();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const root = document.querySelector("#root");
 // root.classList.add("todolistblock");
