@@ -1,6 +1,9 @@
+import { getTodos, setTodos, saveTodoCard } from "./localStorage.js";
+import { calculateTotal, updateEntryCounts } from "./entryCounts.js";
+
 let todos = getTodos();
 
-const filers = {
+const filters = {
   checked: "checked",
   search: "search",
 };
@@ -52,14 +55,6 @@ todoNavBlock.append(
 
 todoSearch.addEventListener("input", searchTodos);
 
-function getTodos() {
-  return JSON.parse(localStorage.getItem("todos")) || [];
-}
-
-function setTodos(todos) {
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-
 function changeCopmlitedCard(id) {
   const todoIndex = todos.findIndex((todo) => todo.id === id);
 
@@ -68,25 +63,10 @@ function changeCopmlitedCard(id) {
     renderChangedData();
   }
 }
-function saveTodoCard({ text }) {
-  const todo = {
-    id: generateId(),
-    date: new Date().toLocaleString(),
-    text,
-    isChecked: false,
-  };
 
-  todos.push(todo);
-
-  renderChangedData();
-}
 function deleteAll() {
   todos = [];
   renderChangedData();
-}
-
-function generateId() {
-  return todos.reduce((acc, { id }) => Math.max(acc, id), 0) + 1;
 }
 
 function removeLastTodo() {
@@ -106,29 +86,28 @@ function renderList(filteredData) {
 
 function renderChangedData() {
   const filteredData = getFilteredData();
-  console.log(filteredData);
-  console.log(activeStatuses);
   updateEntryCounts(filteredData);
   renderList(filteredData);
   setTodos(todos);
 }
 
 function showAll() {
-  if (activeStatuses.includes(filers.checked)) {
-    activeStatuses = activeStatuses.filter((el) => el !== filers.checked);
+  if (activeStatuses.includes(filters.checked)) {
+    activeStatuses = activeStatuses.filter((el) => el !== filters.checked);
   }
   renderChangedData();
 }
+
 function showSearch() {
-  if (!activeStatuses.includes(filers.search)) {
-    activeStatuses.push(filers.search);
+  if (!activeStatuses.includes(filters.search)) {
+    activeStatuses.push(filters.search);
   }
   renderChangedData();
 }
 
 function showChecked() {
-  if (!activeStatuses.includes(filers.checked)) {
-    activeStatuses.push(filers.checked);
+  if (!activeStatuses.includes(filters.checked)) {
+    activeStatuses.push(filters.checked);
   }
   renderChangedData();
 }
@@ -147,11 +126,11 @@ function getFieldsByText(todos, searchValue) {
 
 function getFilteredData() {
   let data = todos;
-  if (activeStatuses.includes(filers.checked)) {
+  if (activeStatuses.includes(filters.checked)) {
     data = getFiltered(data);
   }
 
-  if (activeStatuses.includes(filers.search)) {
+  if (activeStatuses.includes(filters.search)) {
     data = getFieldsByText(data, searchValue);
   }
 
@@ -192,7 +171,6 @@ function createTodoCard({ text, isChecked = false, id, date }) {
     checkboxButton.classList.toggle("checkboxbutton_checked");
     todoCard.classList.toggle("todocard_active");
     todoTextSpan.classList.toggle("todotext_line-through");
-    console.log(id);
 
     changeCopmlitedCard(id);
   });
@@ -206,7 +184,6 @@ function createTodoCard({ text, isChecked = false, id, date }) {
   const todoDate = createSpan(date, "date");
 
   const todoCardButtonClose = createButton("X", "buttoncard", () => {
-    console.log(id);
     removeTodoItem(id);
   });
 
@@ -223,20 +200,6 @@ function createTodoCard({ text, isChecked = false, id, date }) {
   containerDateBtn.append(todoCardButtonClose, todoDate);
 
   return todoCard;
-}
-
-function calculateTotal(filteredData) {
-  return {
-    all: filteredData.length,
-    checked: filteredData.filter((el) => el.isChecked).length,
-  };
-}
-
-function updateEntryCounts(todos) {
-  const { all, checked } = calculateTotal(todos);
-
-  allEntries.textContent = `All: ${all}`;
-  completedEntries.textContent = `Completed: ${checked}`;
 }
 
 function searchTodos() {
@@ -257,3 +220,5 @@ function handleAddButtonClick() {
     saveTodoCard({ text: todoTextValue });
   }
 }
+
+export { todos, renderChangedData, allEntries, completedEntries };
