@@ -1,5 +1,6 @@
 import { getTodos, setTodos, saveTodoCard } from "./localStorage.js";
-import { calculateTotal, updateEntryCounts } from "./entryCounts.js";
+import { updateEntryCounts } from "./entryCounts.js";
+import { showAll, showSearch, showChecked, getFiltered, getFieldsByText, getFilteredData, searchTodos } from './filters.js'
 
 let todos = getTodos();
 
@@ -91,51 +92,51 @@ function renderChangedData() {
   setTodos(todos);
 }
 
-function showAll() {
-  if (activeStatuses.includes(filters.checked)) {
-    activeStatuses = activeStatuses.filter((el) => el !== filters.checked);
-  }
-  renderChangedData();
-}
+// function showAll() {
+//   if (activeStatuses.includes(filters.checked)) {
+//     activeStatuses = activeStatuses.filter((el) => el !== filters.checked);
+//   }
+//   renderChangedData();
+// }
 
-function showSearch() {
-  if (!activeStatuses.includes(filters.search)) {
-    activeStatuses.push(filters.search);
-  }
-  renderChangedData();
-}
+// function showSearch() {
+//   if (!activeStatuses.includes(filters.search)) {
+//     activeStatuses.push(filters.search);
+//   }
+//   renderChangedData();
+// }
 
-function showChecked() {
-  if (!activeStatuses.includes(filters.checked)) {
-    activeStatuses.push(filters.checked);
-  }
-  renderChangedData();
-}
+// function showChecked() {
+//   if (!activeStatuses.includes(filters.checked)) {
+//     activeStatuses.push(filters.checked);
+//   }
+//   renderChangedData();
+// }
 
-function getFiltered(todos) {
-  return todos.filter((el) => {
-    return el.isChecked;
-  });
-}
+// function getFiltered(todos) {
+//   return todos.filter((el) => {
+//     return el.isChecked;
+//   });
+// }
 
-function getFieldsByText(todos, searchValue) {
-  return todos.filter((el) =>
-    el.text.toLowerCase().includes(searchValue.toLowerCase())
-  );
-}
+// function getFieldsByText(todos, searchValue) {
+//   return todos.filter((el) =>
+//     el.text.toLowerCase().includes(searchValue.toLowerCase())
+//   );
+// }
 
-function getFilteredData() {
-  let data = todos;
-  if (activeStatuses.includes(filters.checked)) {
-    data = getFiltered(data);
-  }
+// function getFilteredData() {
+//   let data = todos;
+//   if (activeStatuses.includes(filters.checked)) {
+//     data = getFiltered(data);
+//   }
 
-  if (activeStatuses.includes(filters.search)) {
-    data = getFieldsByText(data, searchValue);
-  }
+//   if (activeStatuses.includes(filters.search)) {
+//     data = getFieldsByText(data, searchValue);
+//   }
 
-  return data;
-}
+//   return data;
+// }
 
 renderChangedData();
 
@@ -202,11 +203,11 @@ function createTodoCard({ text, isChecked = false, id, date }) {
   return todoCard;
 }
 
-function searchTodos() {
-  searchValue = todoSearch.value.toLowerCase();
+// function searchTodos() {
+//   let searchValue = todoSearch.value.toLowerCase();
 
-  showSearch();
-}
+//   showSearch();
+// }
 
 function validateInput(value) {
   return !!value;
@@ -221,4 +222,4 @@ function handleAddButtonClick() {
   }
 }
 
-export { todos, renderChangedData, allEntries, completedEntries };
+export { todos, renderChangedData, allEntries, completedEntries, todoSearch, filters, activeStatuses, searchValue };
